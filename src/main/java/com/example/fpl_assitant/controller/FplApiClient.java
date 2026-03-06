@@ -1,9 +1,8 @@
 package com.example.fpl_assitant.controller;
 
-import com.example.fpl_assitant.dto.BootstrapResponseDto;
-import com.example.fpl_assitant.dto.PlayerDto;
-import com.example.fpl_assitant.dto.PlayerMapper;
+import com.example.fpl_assitant.dto.*;
 import com.example.fpl_assitant.model.Player;
+import com.example.fpl_assitant.model.TeamPick;
 import com.example.fpl_assitant.services.PlayerSyncService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -17,10 +16,12 @@ public class FplApiClient {
 
     private final WebClient webClient;
     private final PlayerMapper playerMapper;
+    private final TeamPickMapper teamPickMapper;
 
-    public FplApiClient(@Qualifier("fplWebClient") WebClient webClient, PlayerMapper playerMapper) {
+    public FplApiClient(@Qualifier("fplWebClient") WebClient webClient, PlayerMapper playerMapper, TeamPickMapper teamPickMapper) {
         this.webClient = webClient;
         this.playerMapper = playerMapper;
+        this.teamPickMapper = teamPickMapper;
     }
 
     public List<Player> getPlayers() {
@@ -28,7 +29,12 @@ public class FplApiClient {
         return playerDtos.stream().map(playerMapper::toEntity).collect(Collectors.toList());
     }
 
-    public String getTeamForWeek(long teamId, long gameWeek) {
-        return webClient.get().uri("/entry/{teamId}/event/{gameWeek}/picks/", teamId, gameWeek).retrieve().bodyToMono(String.class).block();
+    public List<TeamPick> getTeamForWeek(long teamId, long gameWeek) {
+        List<TeamPickDto> teamPickDtos = webClient.get().uri("/entry/{teamId}/event/{gameWeek}/picks/", teamId, gameWeek).retrieve().bodyToMono(TeamResponseDto.class).block().getPicks();
+        return teamPickDtos.stream().map(teamPickMapper::toEntity).peek(teamPick -> {
+                    teamPick.setTeamId(teamId);
+                    teamPick.setGameWeek(gameWeek);
+                })
+                .collect(Collectors.toList());
     }
 }
