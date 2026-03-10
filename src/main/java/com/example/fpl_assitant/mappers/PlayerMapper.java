@@ -1,5 +1,6 @@
-package com.example.fpl_assitant.dto;
+package com.example.fpl_assitant.mappers;
 
+import com.example.fpl_assitant.dto.PlayerDto;
 import com.example.fpl_assitant.model.Player;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

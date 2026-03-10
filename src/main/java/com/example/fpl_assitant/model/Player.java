@@ -9,6 +9,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @ToString
+@Getter
 public class Player {
 
     @Id

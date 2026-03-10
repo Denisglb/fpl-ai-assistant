@@ -1,12 +1,16 @@
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/FplAssistantApplication.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/WebClientConfig.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/controller/FplApiClient.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/dto/BootstrapResponseDto.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/dto/PlayerDto.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/dto/PlayerMapper.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/model/Events.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/model/Player.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/model/PlayerElements.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/model/PlayerPositions.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/model/Position.java
-/Users/deniska/Projects/fpl-assistant/fpl-assitant 2/src/main/java/com/example/fpl_assitant/model/Teams.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/FplAssistantApplication.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/config/AiConfig.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/config/WebClientConfig.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/controller/FplApiClient.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/db/PlayerRepository.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/dto/BootstrapResponseDto.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/dto/PlayerDto.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/dto/TeamPickDto.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/dto/TeamResponseDto.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/mappers/PlayerMapper.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/mappers/TeamPickMapper.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/model/Player.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/model/Position.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/model/TeamPick.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/services/PlayerSyncService.java
+/Users/denysgolub/Projects/fpl-ai-assistant/src/main/java/com/example/fpl_assitant/services/SuggestionService.java
