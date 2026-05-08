@@ -1,0 +1,38 @@
+name: FPl-AI-Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v3
+      - name: java21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: temurin
+      - name: run tests
+        run: mvn verify
+    services:
+      postgres:
+        image: postgres:16
+        environment:
+          POSTGRES_DB: fpl_assistant
+          POSTGRES_USER: fpl
+          POSTGRES_PASSWORD: fpl_secret
+        ports:
+          - "5432:5432"
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
