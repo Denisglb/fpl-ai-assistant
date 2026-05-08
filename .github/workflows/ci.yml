@@ -15,7 +15,7 @@ jobs:
     services:
       postgres:
         image: postgres:16
-        environment:
+        env:
           POSTGRES_DB: fpl_assistant
           POSTGRES_USER: fpl
           POSTGRES_PASSWORD: fpl_secret
