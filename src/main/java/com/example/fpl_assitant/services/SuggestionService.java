@@ -1,6 +1,5 @@
 package com.example.fpl_assitant.services;
 
-import com.example.fpl_assitant.config.WebClientConfig;
 import com.example.fpl_assitant.controller.FplApiClient;
 import com.example.fpl_assitant.db.PlayerRepository;
 import com.example.fpl_assitant.model.Player;
@@ -8,7 +7,6 @@ import com.example.fpl_assitant.model.TeamPick;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

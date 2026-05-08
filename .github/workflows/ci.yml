@@ -12,6 +12,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        environment:
+          POSTGRES_DB: fpl_assistant
+          POSTGRES_USER: fpl
+          POSTGRES_PASSWORD: fpl_secret
     steps:
       - name: checkout branch
         uses: actions/checkout@v3
@@ -22,13 +29,6 @@ jobs:
           distribution: temurin
       - name: run tests
         run: mvn verify
-    services:
-      postgres:
-        image: postgres:16
-        environment:
-          POSTGRES_DB: fpl_assistant
-          POSTGRES_USER: fpl
-          POSTGRES_PASSWORD: fpl_secret
         ports:
           - "5432:5432"
         options: >-
